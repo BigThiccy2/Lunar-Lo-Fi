@@ -1,0 +1,284 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #1a1a2e; /* Dark, chill background */
+    color: #e0e0e0;
+    overflow: hidden; /* Hide scrollbars, background handles full-screen */
+}
+
+.container {
+    display: grid;
+    grid-template-columns: 200px 1fr 200px; /* Left sidebar, main content, right sidebar */
+    grid-template-rows: auto 1fr; /* Header and content area */
+    gap: 20px;
+    width: 90%;
+    max-width: 1200px;
+    background-color: rgba(30, 30, 46, 0.8); /* Slightly transparent background */
+    border-radius: 10px;
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    padding: 20px;
+    z-index: 1; /* Ensure content is above the background overlay */
+    position: relative;
+}
+
+header {
+    grid-column: 1 / -1; /* Span all columns */
+    text-align: center;
+    padding-bottom: 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+h1 {
+    font-size: 2.5em;
+    color: #8c52ff; /* A splash of vibrant color */
+    margin: 0;
+    text-shadow: 0 0 10px rgba(140, 82, 255, 0.5);
+}
+
+.main-content {
+    grid-column: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.music-player {
+    background-color: rgba(45, 45, 66, 0.9);
+    border-radius: 10px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    width: 100%;
+    max-width: 400px;
+}
+
+.album-art {
+    width: 150px;
+    height: 150px;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
+}
+
+.track-info .song-title {
+    font-size: 1.4em;
+    margin: 5px 0;
+    color: #c9c9ff;
+}
+
+.track-info .artist-name {
+    font-size: 1em;
+    color: #a0a0a0;
+    margin-bottom: 15px;
+}
+
+.controls button {
+    background-color: #713fcd;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.controls button:hover {
+    background-color: #4a0eb8;
+}
+
+#volume-slider {
+    width: 80%;
+    margin: 15px 0;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 8px;
+    background: #555;
+    border-radius: 5px;
+    outline: none;
+}
+
+#volume-slider::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    border-radius: 50%;
+    background: #8c52ff;
+    cursor: pointer;
+}
+
+.progress-bar {
+    width: 100%;
+    height: 5px;
+    background-color: #555;
+    border-radius: 5px;
+    margin-top: 15px;
+    position: relative;
+}
+
+.progress {
+    height: 100%;
+    width: 0%;
+    background-color: #8c52ff;
+    border-radius: 5px;
+}
+
+.sidebar {
+    background-color: rgba(30, 30, 46, 0.7);
+    padding: 15px;
+    border-radius: 8px;
+    overflow-y: auto;
+}
+
+.left-sidebar {
+    grid-column: 1;
+}
+
+.right-sidebar {
+    grid-column: 3;
+}
+
+.sidebar h2 {
+    color: #e0e0e0;
+    font-size: 1.3em;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-align: center;
+    color: #8c52ff; /* A splash of vibrant color */
+    text-shadow: 0 0 10px rgba(140, 82, 255, 0.5);
+}
+
+.song-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.song-list li {
+    background-color: #5d3f9b; /* Darker purple for background options */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;}
+
+.song-list li:hover {
+    background-color: #724db2;
+}
+
+.background-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    justify-content: center;
+}
+
+.bg-option {
+    background-color: #5d3f9b; /* Darker purple for background options */
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9em;
+    transition: background-color 0.3s ease;
+}
+
+.bg-option:hover {
+    background-color: #724db2;
+}
+
+.background-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0; /* Behind other content */
+    background-size: cover;
+    background-position: center;
+    transition: background-image 1s ease ;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .container {
+        grid-template-columns: 1fr; /* Single column layout on smaller screens */
+        grid-template-rows: auto auto 1fr auto;
+        width: 95%;
+        padding: 15px;
+    }
+
+    .main-content, .left-sidebar, .right-sidebar {
+        grid-column: 1;
+    }
+
+    .music-player {
+        max-width: none;
+    }
+
+    .sidebar {
+        margin-bottom: 20px;
+    }
+}
+
+/* Style for the song list container */
+.song-list-container {
+    height: 200px; /* Set a fixed height for the scrollable area */
+    overflow-y: scroll; /* Enable vertical scrolling */
+    /* overflow-x: hidden; */ /* Optional: Hide horizontal scrollbar if not needed */
+    padding-right: 15px; /* Adjust padding to prevent text from overlapping the scrollbar */
+}
+
+/* Optional: Customize the appearance of the scrollbar (for Webkit browsers - Chrome, Safari, etc.) */
+.song-list-container::-webkit-scrollbar {
+    width: 8px; /* Width of the vertical scrollbar */
+}
+
+.song-list-container::-webkit-scrollbar-track {
+    background: #444; /* Background color of the scrollbar track */
+    border-radius: 4px; /* Rounded corners for the track */
+}
+
+.song-list-container::-webkit-scrollbar-thumb {
+    background-color: #888; /* Color of the scrollbar thumb */
+    border-radius: 4px; /* Rounded corners for the thumb */
+}
+
+.song-list-container::-webkit-scrollbar-thumb:hover {
+    background: #aaa; /* Change color when hovering over the thumb */
+}
+
+/* Optional: Styles for the song list items themselves */
+.song-list {
+    list-style: none; /* Remove default bullet points */
+    padding: 0;
+    margin: 0;
+}
+
+.song-list li {
+    padding: 8px 0;
+    border-bottom: 1px solid #555; /* Subtle separator between songs */
+    color: #eee; /* Text color for the songs */
+    cursor: pointer; /* Indicate that these are clickable */
+}
+
+.song-list li:last-child {
+    border-bottom: none; /* No border on the last item */
+}
+
+.song-list li:hover {
+    background-color: #333; /* Highlight on hover */
+}
