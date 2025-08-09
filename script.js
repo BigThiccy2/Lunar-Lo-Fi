@@ -16,25 +16,25 @@ const playlist = [
         title: "Dreamscape Drifter",
         artist: "Stardust Beats",
         src: "Audio/chill-lofi-ambient-373046.mp3",
-        albumArt: "images/album-art-placeholder.png"
+        albumArt: "Video/215784.gif"
     },
     {
         title: "Night City Grooves",
         artist: "Neon Echo",
         src: "Audio/lofi-girl-lofi-hiphop-beats-328177.mp3",
-        albumArt: "images/album-art-2.png" // Make sure to create this image
+        albumArt: "Video/NightCity.gif" // Make sure to create this image
     },
     {
         title: "Cosmic Chill",
         artist: "Lunar Dreams",
         src: "Audio/lofi-lofi-music-380581.mp3",
-        albumArt: "images/album-art-3.png" // Make sure to create this image
+        albumArt: "Video/space__r1437994661.gif" // Make sure to create this image
     },
         {
         title: "Spring Lofi",
         artist: "Lunar Dreams",
         src: "Audio/spring-lofi-vibes-lofi-music-340019.mp3",
-        albumArt: "images/album-art-3.png" // Make sure to create this image
+        albumArt: "Video/Spring.webp" // Make sure to create this image
     },
 
     {
