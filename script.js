@@ -35,6 +35,13 @@ const playlist = [
         artist: "Lunar Dreams",
         src: "Audio/spring-lofi-vibes-lofi-music-340019.mp3",
         albumArt: "images/album-art-3.png" // Make sure to create this image
+    },
+
+    {
+        title: "Coffee Lofi",
+        artist: "Sakura Lofi",
+        src: "Audio/CoffeeLofi.mp3",
+        albumArt: "Video/CoffeePixelArt.gif" // Make sure to create this image
     }
 ];
 
