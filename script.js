@@ -132,7 +132,14 @@ backgroundOptions.addEventListener('click', (event) => {
 });
 
 // Initial load
+// Auto-play next track when current ends
+audioPlayer.addEventListener('ended', () => {
+    currentTrackIndex = (currentTrackIndex + 1) % playlist.length;
+    loadTrack(currentTrackIndex);
+});
+
 document.addEventListener('DOMContentLoaded', () => {
+    // Ensure event listener is set before playing
     loadTrack(currentTrackIndex);
     audioPlayer.volume = volumeSlider.value;
     backgroundOverlay.style.backgroundImage = `url(images/lunar-cityscape.jpg)`; // Set initial background
