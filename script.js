@@ -42,6 +42,20 @@ const playlist = [
         artist: "Sakura Lofi",
         src: "Audio/CoffeeLofi.mp3",
         albumArt: "Video/CoffeePixelArt.gif" // Make sure to create this image
+    },
+
+    {
+        title: "Warm Breeze",
+        artist: "Lofi Vibes",
+        src: "Audio/WarmBreezeLofi.mp3",
+        albumArt: "Video/AmbientCityPixelArt.avif" // Make sure to create this image
+    },
+
+    {
+        title: "Sakura Trees",
+        artist: "Sakura Lofi",
+        src: "Audio/Sakura-Lofi.mp3",
+        albumArt: "Video/SakuraTree.gif" // Make sure to create this image
     }
 ];
 
