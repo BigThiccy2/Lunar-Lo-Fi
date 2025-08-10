@@ -144,3 +144,8 @@ document.addEventListener('DOMContentLoaded', () => {
     audioPlayer.volume = volumeSlider.value;
     backgroundOverlay.style.backgroundImage = `url(images/lunar-cityscape.jpg)`; // Set initial background
 });
+
+function setTheme(themeName) {
+    document.body.classList.remove('theme-light', 'theme-dark');
+    document.body.classList.add(themeName);
+}
