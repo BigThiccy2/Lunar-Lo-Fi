@@ -266,10 +266,15 @@ h1 {
 
 /* Style for the song list container */
 .song-list-container {
-    height: 200px; /* Set a fixed height for the scrollable area */
-    overflow-y: scroll; /* Enable vertical scrolling */
-    /* overflow-x: hidden; */ /* Optional: Hide horizontal scrollbar if not needed */
-    padding-right: 15px; /* Adjust padding to prevent text from overlapping the scrollbar */
+    max-height: 250px;
+    overflow-y: auto;
+    padding-right: 5px;
+}
+
+.background-options-container {
+    max-height: 180px;
+    overflow-y: auto;
+    padding-right: 5px;
 }
 
 /* Optional: Customize the appearance of the scrollbar (for Webkit browsers - Chrome, Safari, etc.) */
@@ -345,4 +350,16 @@ h1 {
     cursor: pointer;
     font-size: 0.9em;
     transition: background-color 0.3s ease;
+}
+
+.song-list-container::-webkit-scrollbar,
+.background-options-container::-webkit-scrollbar {
+    width: 8px;
+    background: transparent;
+}
+
+.song-list-container::-webkit-scrollbar-thumb,
+.background-options-container::-webkit-scrollbar-thumb {
+    background: #713fcd;
+    border-radius: 4px;
 }
