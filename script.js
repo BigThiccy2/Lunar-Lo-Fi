@@ -149,3 +149,35 @@ function setTheme(themeName) {
     document.body.classList.remove('theme-light', 'theme-dark');
     document.body.classList.add(themeName);
 }
+
+// ...existing code...
+const progressBar = document.querySelector('.progress-bar');
+const progress = document.querySelector('.progress');
+const currentTimeElem = document.querySelector('.current-time');
+const durationElem = document.querySelector('.duration');
+
+// Update progress bar as song plays
+audioPlayer.addEventListener('timeupdate', () => {
+    if (audioPlayer.duration) {
+        const percent = (audioPlayer.currentTime / audioPlayer.duration) * 100;
+        progress.style.width = percent + '%';
+        currentTimeElem.textContent = formatTime(audioPlayer.currentTime);
+        durationElem.textContent = formatTime(audioPlayer.duration);
+    }
+});
+
+// Seek when clicking the progress bar
+progressBar.addEventListener('click', (e) => {
+    const rect = progressBar.getBoundingClientRect();
+    const clickX = e.clientX - rect.left;
+    const percent = clickX / rect.width;
+    audioPlayer.currentTime = percent * audioPlayer.duration;
+});
+
+// Helper function to format time
+function formatTime(seconds) {
+    const min = Math.floor(seconds / 60);
+    const sec = Math.floor(seconds % 60);
+    return `${min}:${sec.toString().padStart(2, '0')}`;
+}
+// ...existing code...
